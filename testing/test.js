@@ -9,4 +9,15 @@ const sampleRoutes = {
     }
 }
 
-sciBase.prepareAndExpose(sampleRoutes)
+function oneMiddlewareFunction(req, res, next) {
+    console.log("MiddleWare here!")
+    next()
+}
+function otherMiddlewareFunction(req, res, next) {
+    console.log("Other MiddleWare here!")
+    next()
+}
+
+const allMiddleWare = [oneMiddlewareFunction, otherMiddlewareFunction]
+// sciBase.prepareAndExpose(allMiddleWare, sampleRoutes)
+sciBase.prepareAndExpose(oneMiddlewareFunction, sampleRoutes)
