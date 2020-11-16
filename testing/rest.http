@@ -1,0 +1,12 @@
+############################################################
+@local = http://localhost:3333
+
+############################################################
+### local test requests
+POST {{local}}/getResponse
+content-type: application/json
+
+{
+    "id": "gaga",
+    "data": "111"
+}
