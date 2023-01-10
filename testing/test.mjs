@@ -1,8 +1,11 @@
-const sciBase = require("../output/index.js")
+import * as sciBase from "../output/index.js"
 
 const sampleRoutes = {
     getResponse: (req, res) => {
         console.log("on getResponse")
+        console.log("ip: "+req.ip)
+        console.log("ips: "+req.ips)
+        console.log("rawHeaders: "+req.rawHeaders)
         console.log(JSON.stringify(req.body, null, 4))
         const response = {ok:true}
         res.send(response)

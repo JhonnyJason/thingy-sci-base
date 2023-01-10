@@ -1,9 +1,20 @@
 ############################################################
 @local = http://localhost:3333
 
+@localProxy = http://localhost:3332
+
 ############################################################
 ### local test requests
 POST {{local}}/getResponse
+content-type: application/json
+
+{
+    "id": "gaga",
+    "data": "111"
+}
+
+### local proxy test requests
+POST {{localProxy}}/getResponse
 content-type: application/json
 
 {
